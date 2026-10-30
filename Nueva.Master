@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Nueva.master.cs" Inherits="Parcial2.Nueva" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sitio Web para Empresa de Consultoría Legal</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header>
+                <h1>Sitio Web para Empresa de Consultoría Legal</h1>
+
+                <nav>
+                <asp:HyperLink ID="HyperLink1" runat="server">Home</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink3" runat="server">Registro de Usuarios</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink2" runat="server">Gestión de Documentos Legales</asp:HyperLink>
+                <br />
+                </nav>
+            </header>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <footer class="legal-footer">
+    <div class="footer-content">
+        <!-- Columna 1: Información de la Empresa -->
+        <div class="footer-column">
+            <h4>Consultora Legal Integral</h4>
+            <p>Brindando asesoramiento jurídico estratégico, corporativo y defensa especializada con excelencia y rigor profesional.</p>
+        </div>
+
+        <!-- Columna 2: Enlaces Útiles -->
+        <div class="footer-column">
+            <h5>Navegación</h5>
+            <ul>
+                <li><asp:HyperLink runat="server" NavigateUrl="~/Default.aspx">Inicio</asp:HyperLink></li>
+                <li><asp:HyperLink runat="server" NavigateUrl="~/Registro.aspx">Registro</asp:HyperLink></li>
+                <li><asp:HyperLink runat="server" NavigateUrl="~/Contact.aspx">Contacto</asp:HyperLink></li>
+            </ul>
+        </div>
+
+        <!-- Columna 3: Datos de Contacto o Legal -->
+        <div class="footer-column">
+            <h5>Contacto</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Córdoba, Argentina</p>
+            <p><i class="fas fa-envelope"></i> contacto@consultorialegal.com</p>
+        </div>
+    </div>
+
+    <!-- Barra inferior de Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; <%= DateTime.Now.Year %> Consultora Legal. Todos los derechos reservados.</p>
+        <p class="footer-legal-notice">La información contenida en este sitio web tiene fines meramente informativos y no constituye asesoramiento jurídico vinculante.</p>
+    </div>
+</footer>
+        </div>
+    </form>
+</body>
+</html>
