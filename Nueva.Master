@@ -8,19 +8,168 @@
     <title>Sitio Web para Empresa de Consultoría Legal</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* --- Header Styles --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #1a252f;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #1a252f;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .header-logo {
+            margin: 15px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header-logo img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        header nav {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f1f4f8;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        header nav a {
+            color: #1a252f;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        header nav a:hover {
+            background-color: #1a252f;
+            color: #ffffff;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            min-height: 400px;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Footer Styles --- */
+        .legal-footer {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 4px solid #c0392b;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 30px 20px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px 15px;
+        }
+
+        .footer-logo {
+            height: auto;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .footer-column h4, .footer-column h5 {
+            color: #f1c40f;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #bdc3c7;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: #11181f;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #95a5a6;
+            border-top: 1px solid #34495e;
+        }
+
+        .footer-legal-notice {
+            font-size: 11px;
+            color: #7f8c8d;
+            margin-top: 8px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <header>
+               
                 <h1>Sitio Web para Empresa de Consultoría Legal</h1>
+                
+        <!-- Logo principal horizontal en el Header -->
+        <div class="header-logo">
+            <asp:Image ID="imgHeaderLogo" runat="server" ImageUrl="~/Images/logo 3.png" AlternateText="Asesoría Legal Global" Width="212px" Height="51px" />
+        </div>
 
                 <nav>
-                <asp:HyperLink ID="HyperLink1" runat="server">Home</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Inicio.aspx">Inicio</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:HyperLink ID="HyperLink3" runat="server">Registro de Usuarios</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Registro.aspx">Registro </asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:HyperLink ID="HyperLink2" runat="server">Gestión de Documentos Legales</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Documentos.aspx">Gestión de Documentos </asp:HyperLink>
                 <br />
                 </nav>
             </header>
@@ -31,7 +180,8 @@
     <div class="footer-content">
         <!-- Columna 1: Información de la Empresa -->
         <div class="footer-column">
-            <h4>Consultora Legal Integral</h4>
+            <asp:Image ID="imgFooterLogo" runat="server" ImageUrl="~/Images/logo 2.png" AlternateText="Logo Asesoría Legal" CssClass="footer-logo" Height="83px" Width="151px" />
+            <h4>Aaesoria Legal Integral</h4>
             <p>Brindando asesoramiento jurídico estratégico, corporativo y defensa especializada con excelencia y rigor profesional.</p>
         </div>
 
@@ -55,7 +205,7 @@
 
     <!-- Barra inferior de Copyright -->
     <div class="footer-bottom">
-        <p>&copy; <%= DateTime.Now.Year %> Consultora Legal. Todos los derechos reservados.</p>
+        <p>&copy; <%= DateTime.Now.Year %> Asesoria Legal. Todos los derechos reservados.</p>
         <p class="footer-legal-notice">La información contenida en este sitio web tiene fines meramente informativos y no constituye asesoramiento jurídico vinculante.</p>
     </div>
 </footer>
