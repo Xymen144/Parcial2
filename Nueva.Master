@@ -176,6 +176,7 @@
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
+
             <footer class="legal-footer">
     <div class="footer-content">
         <!-- Columna 1: Información de la Empresa -->
