@@ -13,5 +13,21 @@ namespace Parcial2
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            HttpCookie cookieContraseña = new HttpCookie("Contraseña", this.TextBox5.Text);
+            cookieContraseña.Expires = DateTime.Now.AddDays(1); 
+            this.Response.Cookies.Add(cookieContraseña);
+
+            
+            this.Session["UsuarioLogueado"] = this.TextBox3.Text;
+            this.Session.Timeout = 1;
+            Response.Redirect("Documentos.aspx");
+
+            this.Label1.Text = "Registro exitoso! Contraseña guardada en Cookie y Usuario guardado en Sesión";
+
+        }
     }
 }

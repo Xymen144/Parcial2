@@ -12,6 +12,14 @@ namespace Parcial2
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["UsuarioLogueado"] != null)
+            {
+                this.Label1.Text = "Bienvenido al área de gestión, " + Session["UsuarioLogueado"].ToString() + "!";
+            }
+            else
+            {
+                Response.Redirect("Registro.aspx");
+            }
         }
     }
 }
