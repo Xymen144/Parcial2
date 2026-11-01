@@ -2,7 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p>
+   
+    <h2 style="color: #2c3e50; margin-top: 0; margin-bottom: 20px; font-size: 22px; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px;">
+    Formulario de Registro
+</h2>
     Nombre y Apellido<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" BorderColor="Black" ControlToValidate="TextBox1" ErrorMessage="* ingerese Nombre y apellido" ForeColor="Red">*</asp:RequiredFieldValidator>
 </p>
